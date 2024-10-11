@@ -17,4 +17,4 @@ RUN set -ex; \
 
 # See: <https://github.com/rofl0r/microsocks?tab=readme-ov-file#command-line-options>
 ENTRYPOINT [ /usr/bin/microsocks ]
-CMD [ -1, -q, -i 0.0.0.0, -p 1080, -u ${MICROSOCKS_USERNAME}, -P ${MICROSOCKS_PASSWORD}, -w 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16 ]
+CMD [ -1, -i 0.0.0.0, -p 1080, -u ${MICROSOCKS_USERNAME}, -P ${MICROSOCKS_PASSWORD} ]
