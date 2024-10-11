@@ -3,7 +3,7 @@
 # See <https://github.com/frxyt/docker-microsocks> for details.
 
 ARG DEBIAN_VERSION=stable-slim
-FROM ${DEBIAN_VERSION}
+FROM debian:${DEBIAN_VERSION}
 
 ARG MICROSOCKS_VERSION=*
 ENV DEBIAN_FRONTEND=noninteractive \
