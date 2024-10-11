@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN set -ex; \
     apt-get update; \
     apt-get install -y --fix-missing --no-install-recommends \
-      microsocks=${MICROSOCKS_VERSION}; \
+      microsocks=${MICROSOCKS_VERSION}*; \
     apt-get clean -y; apt-get clean -y; apt-get autoclean -y; rm -r /var/lib/apt/lists/*
 
 # See: <https://github.com/rofl0r/microsocks?tab=readme-ov-file#command-line-options>
