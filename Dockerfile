@@ -5,11 +5,14 @@
 ARG DEBIAN_VERSION=stable-slim
 FROM ${DEBIAN_VERSION}
 
-ENV DEBIAN_FRONTEND=noninteractive
+ARG MICROSOCKS_VERSION=*
+ENV DEBIAN_FRONTEND=noninteractive \
+    MICROSOCKS_USERNAME=user \
+    MICROSOCKS_PASSWORD=pass
 RUN set -ex; \
     apt-get update; \
     apt-get install -y --fix-missing --no-install-recommends \
-      microsocks; \
+      microsocks=${MICROSOCKS_VERSION}; \
     apt-get clean -y; apt-get clean -y; apt-get autoclean -y; rm -r /var/lib/apt/lists/*
 
 # See: <https://github.com/rofl0r/microsocks?tab=readme-ov-file#command-line-options>
